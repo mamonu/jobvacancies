@@ -12,14 +12,14 @@ fluidPage(
       
       
       radioButtons("choice", "Job :", 
-                   c ( "Data Scientist" = "Data%20Scientist", "Cook" = "Cook", "Singer" = "Singer" ), 
-                   selected = "Cook", inline = TRUE, width = 300),
+                   c ( "Data Scientist" = "Data%20Scientist", "Cook" = "Cook", "Statistician" = "Statistician" ), 
+                   selected = "Cook",  width = 300),
       
       
       
        
      
-      hr()
+      hr(),width = 2
       
 
     ),

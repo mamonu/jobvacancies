@@ -43,8 +43,17 @@ shinyServer(function(input, output, session) {
     
     result <-data.frame(fromJSON((json_file)))
     
-    drops <- c("version","highlight","version","results.onmousedown","start","end","pagenumber","results.noUniqueUrl")
-    result <- result[ , !(names(result) %in% drops)]
+    drops <- c("version","highlight","version","results.onmousedown","start","end","pagenumber",
+               "results.noUniqueUrl","dupefilter","totalResults","pageNumber", "results.state",
+               
+               "results.url" ,"results.jobkey", 	"results.sponsored", 	"results.expired", 	"results.indeedApply"
+               
+               )
+               
+               
+               
+
+        result <- result[ , !(names(result) %in% drops)]
     formattable(result, list())
     
 
