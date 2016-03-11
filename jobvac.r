@@ -24,7 +24,10 @@ result<-(fromJSON( reedjson ))
 
 #result <-(fromJSON((json_file)))
 
-formattable(result, list())
+
+
+
+formattable((result$results), list())
 
 
 
