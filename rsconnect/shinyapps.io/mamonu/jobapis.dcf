@@ -1,0 +1,9 @@
+name: jobapis
+account: mamonu
+server: shinyapps.io
+appId: 88408
+bundleId: 393219
+url: https://mamonu.shinyapps.io/jobapis/
+when: 1457713132.30101
+asMultiple: FALSE
+asStatic: FALSE

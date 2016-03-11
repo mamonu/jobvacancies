@@ -1,16 +1,14 @@
-library(tm)
-library(RTextTools)
-library(topicmodels)
-library(dplyr)
-library(stringi)
-library(LDAvis)
-library(slam)
-library(lda)
-library(plyr)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 library(jsonlite)
 library(formattable)
 library(shiny)
-library(XML)
+ 
 
 #nInst = 4 # Change level of parallelism
 #useBackend(parallel,executors = nInst)
@@ -35,31 +33,21 @@ setwd("/home/bigdata/LDA/textmining/")
 
 shinyServer(function(input, output, session) {
 
-  output$indeed <- renderUI    ({
+  output$indeed <- renderFormattable    ({
   
  
   
-    #json_file <- paste0("http://api.lmiforall.org.uk/api/v1/vacancies/search?keywords=",input$choice)
-    XMLquery <- paste0(indeedapi1,input$choice,indeepapi2)
+
+    json_file <- paste0(indeedapi1,input$choice,indeepapi2)
+    #json_file <- paste0(indeedapi1,"cook",indeepapi2)
     
+    result <-data.frame(fromJSON((json_file)))
     
+    drops <- c("version","highlight","version","results.onmousedown","start","end","pagenumber","results.noUniqueUrl")
+    result <- result[ , !(names(result) %in% drops)]
+    formattable(result, list())
     
-    txt <- htmlToText(XMLquery)
-    HTML(txt)
-    
-#    html.raw     <- htmlTreeParse(XMLquery, useInternalNodes = TRUE)
-    
-    
-#    topxml <- xmlSApply(xmlRoot(html.raw),
-#                       function(x) xmlSApply(x, xmlValue))
-     
-    
-    
- 
-    
-    #result <- xmlToDataFrame(doc)
-    #result <-(fromJSON((json_file)))
-    #formattable(result,list())
+
 
   })
   
@@ -70,7 +58,7 @@ shinyServer(function(input, output, session) {
   output$universal <- renderFormattable    ({
     
     json_file <- paste0("http://api.lmiforall.org.uk/api/v1/vacancies/search?keywords=",input$choice)
-    result <-(fromJSON((json_file)))
+    result <-data.frame(fromJSON((json_file)))
     formattable(result,list())
     
     

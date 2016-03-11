@@ -1,7 +1,7 @@
 
 
 indeedapi1 <- 'http://api.indeed.com/ads/apisearch?publisher=6288147437747073&q='
-indeepapi2 <- '&l=UK&sort=&radius=&st=&jt=&start=&limit=&fromage=&filter=&latlong=1&co=gb&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2'
+indeepapi2 <- '&l=UK&sort=&radius=&st=&jt=&start=&limit=&fromage=&filter=&latlong=1&co=gb&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2&format=json'
 reedapi    <- "http://www.reed.co.uk/api/1.0/search?keywords="
 
 UJapi      <- "http://api.lmiforall.org.uk/api/v1/vacancies/search?keywords="

@@ -1,5 +1,7 @@
 library(shiny)
 library(formattable)
+library(shinydashboard) 
+
 fluidPage(
   # Application title
   titlePanel("Jobs API data examples"),
@@ -11,22 +13,13 @@ fluidPage(
       
       radioButtons("choice", "Job :", 
                    c ( "Data Scientist" = "Data%20Scientist", "Cook" = "Cook", "Singer" = "Singer" ), 
-                   selected = "Cook", inline = TRUE, width = 300)
+                   selected = "Cook", inline = TRUE, width = 300),
       
       
       
-      ,
+       
      
       hr()
-#       ,
-#       radioButtons("apichoice", "API :", 
-#                         c ( 
-#                           
-#                             "Universal Jobmatch" = "1", 
-#                             "Reed" = "2", 
-#                             "Indeed" = "3" 
-#                             ), 
-#                         selected = "Universal Jobmatch", inline = TRUE, width = 300)
       
 
     ),
@@ -34,8 +27,10 @@ fluidPage(
     
     mainPanel( 
       tabsetPanel(
+       
+        
         tabPanel("UniversalJobcentre API",formattableOutput ("universal")),
-      tabPanel("Indeed API",uiOutput ("indeed"))
+        tabPanel("Indeed API",formattableOutput ("indeed"))
       
       
       )
