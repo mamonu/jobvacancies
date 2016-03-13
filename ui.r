@@ -1,6 +1,7 @@
 library(shiny)
 library(formattable)
-library(shinydashboard) 
+library(leaflet)
+
 
 fluidPage(
   # Application title
@@ -30,9 +31,11 @@ fluidPage(
        
         
         tabPanel("UniversalJobcentre API",formattableOutput ("universal")),
-        tabPanel("Indeed API",formattableOutput ("indeed"))
+        tabPanel("Indeed API",formattableOutput ("indeed")),
+        
+        tabPanel("Reed API", formattableOutput ("reed")),
       
-      
+        tabPanel("IndeedMapped " ,leafletOutput("mymap"))
       )
       
       )
